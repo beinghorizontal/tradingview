@@ -25,7 +25,9 @@ password = 'trading view password'
 
 df =generate_csv(username,password,symbol_name,frequency) #You will get dataframe with datetime, O,H,L,C,V and one csv copy will get exported to user folder that it made above
 
-frequency="1_day" #"1_minute", "1_day" , "1_week", "1_month" #You can't exceed 5000 bars with a free account no matter the bar frequency. So one-minute data will be approximately 10 to 12 days of history. For 30 minute you will get around 13 months of data
+frequency="1_day" #"1_minute", "1_day" , "1_week", "1_month" #You can't exceed 5000 bars with a free account no matter the bar frequency. So one-minute data will be approximately 10 to 12 days of history. For 30 minute you will get around 13 months of data. 
+
+By default it try to fetch max bars allowed by TradingView, if you need lower number of bars (less than 5k) then change line 50 bars=10000 to bars=your desired number 
 
 ## Few notes
 
@@ -46,13 +48,13 @@ Open tradingview chart
 Then press Ctrl+Shift+i (after Right Click inspect tab)
 A small window will appear inside the existing browser tab.
 
-It will look like this
+It will look like this (arrow_1)
 
-![image](https://user-images.githubusercontent.com/28746824/120108487-f4172980-c182-11eb-8f94-77f20bc4a249.png)
+![image](https://user-images.githubusercontent.com/28746824/120113544-97bf0480-c198-11eb-82a8-909a4b07fb6d.png)
 
-In the image, the top arrow is where you have to click ('network' tab) , 
+In the image, the top arrow_2 is where you have to click ('network' tab) , 
 
-Then click on 'ws' ( second arrow)
+Then click on 'ws' ( arrow_3)
 
 'ws' stands for WebSocket and TradingView chart gets the data through WebSocket
 
