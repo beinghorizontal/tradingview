@@ -71,5 +71,22 @@ Arrow_2 click 'chart_create_session'
 Arrow_3 Text will apear. Observe the text and see the see the similarities b/w our code 
 
 sendMessage(ws, "chart_create_session", [chart_session, ""]) #chart session is dynamically generated with this line  chart_session = generateChartSession() 
- 
+
+Another example (felt above one wasn't that clear )
+
+![image](https://user-images.githubusercontent.com/28746824/120113816-ddc89800-c199-11eb-8a12-f4cd76941329.png)
+
+In the above chart, Arrow_1 is pointing at a small red bar in websocket response- indicates message came from server & Arrow_2 pointing at green bar indicates message sending to the server. So in our code all our sendMessage() are copied from message in front of green bars
+
+Let's click Arrow_3
+
+Arrow_4 click there to expand the message
+
+Let's get back to our code tv_get_csv.py where we are writing websocket sendMessage(), check this line  
+
+
+sendMessage(ws, "create_series", [chart_session, "sds_1", "s1", "sds_sym_1", fr, bars])
+
+This is what exactly written at Arrow_4
+
 Similarly, observe other lines near to that line in the code and match with 'ws' tab in the browser. This is where changes will trigger 1st when Tradingview add or remove the features or change the user interface.
